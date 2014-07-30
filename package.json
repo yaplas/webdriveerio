@@ -1,0 +1,16 @@
+{
+	"name":"webdriveerio",
+	"version": "0.1.1",
+	"description": "webdriverJS + cheerio",
+	"main": "./index.js",
+	"keywords": ["selenium","jquery","webdriverJS", "cheerio", "webdriver"],
+	"license": "MIT",
+	"author": {
+		"name": "Agustín Lascialandare", 
+		"email":"lascialandare@gmail.com"
+	},
+	"dependencies": {
+		"cheerio":">=0.17.0",
+		"webdriverjs":">=1.7.2"
+	}
+}
