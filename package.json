@@ -1,6 +1,6 @@
 {
 	"name":"webdriveerio",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "webdriverJS + cheerio",
 	"main": "./index.js",
 	"keywords": ["selenium","jquery","webdriverJS", "cheerio", "webdriver"],
@@ -8,6 +8,10 @@
 	"author": {
 		"name": "Agustín Lascialandare", 
 		"email":"lascialandare@gmail.com"
+	},
+	"repository" : { 
+		"type" : "git", 
+		"url" : "https://github.com/yaplas/webdriveerio.git" 
 	},
 	"dependencies": {
 		"cheerio":">=0.17.0",
