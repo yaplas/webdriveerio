@@ -20,7 +20,10 @@ driver
             var amount = parseInt($field.next().text().split(' ')[0]);
 
             if (amount >= 5 && amount <= 12 ) {
-                $field.click();
+                
+                // just call click over the element and driver will click the element in the real browser
+                $field.click(); 
+            
             }
         });
     }) 
