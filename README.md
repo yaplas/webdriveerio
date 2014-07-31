@@ -85,3 +85,5 @@ The list of checkboxes is like this:
 
     ...
 ```
+
+So test.js will click on "12 things", "5 things" and "8 things" checkboxes.
