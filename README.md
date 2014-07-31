@@ -68,3 +68,20 @@ driver
 ```
 
 The above code check the selected items, and the selection was made thru an algorithm instead of a simple css selector.
+
+The list of checkboxes is like this:
+
+```html
+    ...
+    
+	<form>
+		<input type="checkbox"></input><label>12 things</label><br>
+		<input type="checkbox"></input><label>20 things</label><br>
+		<input type="checkbox"></input><label>3 things</label><br>
+		<input type="checkbox"></input><label>5 things</label><br>
+		<input type="checkbox"></input><label>8 things</label><br>
+		<input type="checkbox"></input><label>14 things</label><br>
+	</form>
+
+    ...
+```
