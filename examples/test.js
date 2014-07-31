@@ -12,7 +12,10 @@ var driver = wd.remote(options);
 driver
     .init()
     .url('file:///' + __dirname + '/checkbox_list.html') 
-    .query('form input', function(err, $inputs, $) {
+    .query('form input', function(err, $inputs, $) { 
+        // you could add a pause between actions calling "query" like this:
+        // .query('form input', 500, function(err, $inputs, $) { 
+        // 500 = milliseconds of pause between actions ("click" action in this example)
         
         $inputs.each(function(i,e){
         	

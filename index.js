@@ -1,7 +1,8 @@
 var $ = require('cheerio'),
     webdriverjs = require('webdriverjs'),
     _remote = webdriverjs.remote,
-    _proto = Object.getPrototypeOf($());
+    _proto = Object.getPrototypeOf($()),
+    _pause = 1;
 
 // extend the prototype of cheerio object with this method 
 // that return an "absolute" selector for the cheerio element
@@ -30,7 +31,7 @@ function implement(driver, name) {
         
         var _driver = driver;
         
-        driver = driver.pause(100, function() { 
+        driver = driver.pause(_pause, function() { 
             _driver[name].apply(_driver, args); 
         });
         
@@ -62,7 +63,14 @@ webdriverjs.remote = function() {
     implement(driver,'isSelected');
     implement(driver,'isVisible');
 
-    driver.addCommand('query', function(selector, cb){
+    // selector = css selector
+    // pause = milliseconds of pause between action posts to selenium <optional argument>
+    // cb = callback function(err, $code, $)
+    driver.addCommand('query', function(selector, a, b){
+
+        var cb = typeof a == 'function' ? a : b;
+        _pause = typeof a == 'number' ? a : 1;
+
         this.getSource(function(err, code){
             cb(err, $(code).find(selector), $);
         });
