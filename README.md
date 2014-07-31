@@ -15,9 +15,56 @@ You have a webdriverJS driver with a new command called "query". You can call th
     setValue
 
 This method are the same as dirver method but without selector argument (css selector), because the target element is defined by the cheerio element that has the method, so you do not need to pass a selector.
-This allow you to write algoritms to determinate wich elements has to be target of actions instead of being limited by a css selector.
+This allow you to write code to determinate wich elements has to be action targets instead of being limited by a css selector.
 
 How to install it
 =================
 
 npm install webdriveerio
+
+Example
+========
+
+In the examples folder you'll find test.js file that search into checkbox-list.html some checkboxes and click the ones that match a rule (amount of "things" between 5 and 12).
+
+
+```js
+
+var wd = require('webdriveerio');
+
+var options = { desiredCapabilities: { browserName: 'chrome' } };
+
+var driver = wd.remote(options);
+
+
+// EXAMPLE:
+// we will clck only checkboxes with an amount of things between 5 and 12;
+
+
+driver
+    .init()
+    .url('file:///' + __dirname + '/checkbox_list.html') 
+    .query('form input', function(err, $inputs, $) { 
+        // you could add a pause between actions, calling "query" like this:
+        // .query('form input', 500, function(err, $inputs, $) { 
+        // 500 = milliseconds of pause between actions ("click" action in this example)
+        
+        $inputs.each(function(i,e){
+        	
+        	var $field = $(e);
+            var amount = parseInt($field.next().text().split(' ')[0]);
+
+            if (amount >= 5 && amount <= 12 ) {
+                
+                // just call click over the element and driver will click the element in the real browser
+                $field.click(); 
+            
+            }
+        });
+    }) 
+    .pause(10000, function(){})
+    .end();
+
+```
+
+The above code check the selected items, and the selection was made thru an algorithm instead of a simple css selector.
