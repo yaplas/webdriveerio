@@ -30,7 +30,7 @@ function implement(driver, name) {
         
         var _driver = driver;
         
-        driver = driver.pause(1000, function() { 
+        driver = driver.pause(100, function() { 
             _driver[name].apply(_driver, args); 
         });
         

@@ -6,23 +6,22 @@ var driver = wd.remote(options);
 
 
 // EXAMPLE:
-// we will check only checkbox with an amount of things between 5 and 12;
+// we will clck only checkboxes with an amount of things between 5 and 12;
 
 
 driver
     .init()
-    .url('http://github.com/yaplas/webdriveerio/blob/master/examples/checkbox-list.html')
+    .url('file:///' + __dirname + '/checkbox_list.html') 
     .query('form input', function(err, $inputs, $) {
         
         $inputs.each(function(i,e){
         	
         	var $field = $(e);
-            var amount = $field.next().text().split(' ')[0];
+            var amount = parseInt($field.next().text().split(' ')[0]);
 
-            if (amount > )
-
-
- 
+            if (amount >= 5 && amount <= 12 ) {
+                $field.click();
+            }
         });
     }) 
     .pause(10000, function(){})
