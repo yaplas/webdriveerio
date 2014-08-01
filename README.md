@@ -1,9 +1,9 @@
 webdriveerio (webdriverJS + cheerio)
 ====================================
 
-This module is a cheerio JQuery core implementation binded with a webdriverJS driver. With webdriveerio you can manipulate (like JQuery) HTML nodes from a web site page source code, and trigger actions over them like being in a real browser thru webdriverJS over selenium server.
+This module is a cheerio JQuery core implementation binded with a webdriverJS driver. With webdriveerio you can manipulate (like JQuery) HTML nodes from a web site page source code, and trigger actions over them like in a real browser, using webdriverJS over a selenium server.
 
-You have a webdriverJS driver with a new command called "query". You can call this command with a selector and a callback that receive a "list" of element getting from the page laded on the driver. Each of this elements are extended with the action methods that the webdriverJS driver has:
+You have a webdriverJS driver with a new command called "query". You can call this command with a selector and a callback that receive a "list" of element getting from the page loaded on the driver. Each of this elements are extended with the action methods that the webdriverJS driver has:
 
     addValue
     buttonClick
@@ -15,7 +15,7 @@ You have a webdriverJS driver with a new command called "query". You can call th
     setValue
 
 These methods are the same as the dirver methods but without selector argument (css selector), because the target element is defined by the node on which the method was called, so you do not need to pass a selector.
-This allow you to write code to programatically select nodes and perform actions over them, instead of being limited to select them using css selectors.
+This allow you to write code to programatically select nodes and perform actions over them, instead of being limited to select them using css selectors only.
 
 How to install it
 =================
