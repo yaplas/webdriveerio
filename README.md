@@ -14,7 +14,7 @@ You have a webdriverJS driver with a new command called "query". You can call th
     moveToObject
     setValue
 
-This method are the same as dirver method but without selector argument (css selector), because the target element is defined by the cheerio element that has the method, so you do not need to pass a selector.
+These methods are the same as dirver method but without selector argument (css selector), because the target element is defined by the cheerio element that has the method, so you do not need to pass a selector.
 This allow you to write code to determinate wich elements has to be action targets instead of being limited by a css selector.
 
 How to install it
@@ -67,7 +67,7 @@ driver
 
 ```
 
-The above code check the selected items, and the selection was made thru an algorithm instead of a simple css selector.
+The above code click a selection of items, and the selection was made by iterating over inputs and programatically decide wich has to be clicked depending on the weight of a number into the text of the label. It could not be posible using css selectors only.
 
 The list of checkboxes is like this:
 
