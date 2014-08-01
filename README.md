@@ -14,8 +14,8 @@ You have a webdriverJS driver with a new command called "query". You can call th
     moveToObject
     setValue
 
-These methods are the same as the dirver methods but without selector argument (css selector), because the target element is defined by the HTML element on which the method was called, so you do not need to pass a selector.
-This allow you to write code to determinate wich elements has to be action targets instead of being limited by a css selector.
+These methods are the same as the dirver methods but without selector argument (css selector), because the target element is defined by the node on which the method was called, so you do not need to pass a selector.
+This allow you to write code to programatically select nodes and perform actions over them, instead of being limited to select them using css selectors.
 
 How to install it
 =================
