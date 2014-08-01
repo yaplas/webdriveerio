@@ -67,7 +67,7 @@ driver
 
 ```
 
-The above code click a selection of items, and the selection was made by iterating over inputs and programatically decide wich has to be clicked depending on the weight of a number into the text of the label. It could not be posible using css selectors only.
+The above code click a selection of items, iterating over inputs and programatically decide wich has to be clicked depending on the weight of a number into the text of the label. It could not be posible using css selectors only.
 
 The list of checkboxes is like this:
 
