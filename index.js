@@ -1,13 +1,13 @@
 var $ = require('cheerio'),
-    webdriverjs = require('webdriverjs'),
-    _remote = webdriverjs.remote,
+    webdriverio = require('webdriverio'),
+    _remote = webdriverio.remote,
     _proto = Object.getPrototypeOf($()),
     _pause = 1;
 
-// extend the prototype of cheerio object with this method 
+// extend the prototype of cheerio object with this method
 // that return an "absolute" selector for the cheerio element
 _proto.absolute = function(element, value) {
-    
+
     element = element || this;
 
     var name = element[0].name,
@@ -21,33 +21,33 @@ _proto.absolute = function(element, value) {
     return hasParent ? this.absolute(parent, value) : value;
 };
 
-// this function implement the webdriverJS "actions"
+// this function implement the WebdriverIO "actions"
 // extending the prototype of the cheerio objects
 function implement(driver, name) {
 
     _proto[name] = function() {
         var args = Array.prototype.slice.call(arguments);
         args = [this.absolute()].concat(args);
-        
+
         var _driver = driver;
-        
-        driver = driver.pause(_pause, function() { 
-            _driver[name].apply(_driver, args); 
+
+        driver = driver.pause(_pause, function() {
+            _driver[name].apply(_driver, args);
         });
-        
+
         return driver;
     };
 }
 
-// reimplement the remote method 
+// reimplement the remote method
 // to call action implementations on cheerio objects
 // and create the "query" driver command
-webdriverjs.remote = function() {
-    
+webdriverio.remote = function() {
+
     var args = Array.prototype.slice.call(arguments);
     var driver = _remote.apply(this, args);
 
-    // webdriverJS actions
+    // webdriverio actions
     implement(driver,'addValue');
     implement(driver,'buttonClick');
     implement(driver,'clearElement');
@@ -59,7 +59,7 @@ webdriverjs.remote = function() {
     //implement(driver,'submitForm');
     //implement(driver,'waitFor');
 
-    // webdriverJS status
+    // webdriverio status
     implement(driver,'isSelected');
     implement(driver,'isVisible');
 
@@ -79,4 +79,4 @@ webdriverjs.remote = function() {
     return driver;
 };
 
-module.exports = webdriverjs;
+module.exports = webdriverio;
