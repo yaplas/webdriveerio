@@ -6,15 +6,15 @@
 	"keywords": ["selenium","jquery","webdriverJS", "cheerio", "webdriver"],
 	"license": "MIT",
 	"author": {
-		"name": "Agustín Lascialandare", 
+		"name": "Agustín Lascialandare",
 		"email":"lascialandare@gmail.com"
 	},
-	"repository" : { 
-		"type" : "git", 
-		"url" : "https://github.com/yaplas/webdriveerio.git" 
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/yaplas/webdriveerio.git"
 	},
 	"dependencies": {
 		"cheerio":">=0.17.0",
-		"webdriverjs":">=1.7.2"
+		"webdriverio":">=2.1.0"
 	}
 }
