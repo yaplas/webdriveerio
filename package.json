@@ -1,6 +1,6 @@
 {
 	"name":"webdriveerio",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "webdriverJS + cheerio",
 	"main": "./index.js",
 	"keywords": ["selenium","jquery","webdriverJS", "cheerio", "webdriver"],
